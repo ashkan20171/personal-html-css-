@@ -1,237 +1,94 @@
- <!DOCTYPE html>
-<html lang="en" class=" js no-touch">
+<!doctype html>
+<html lang="fa" dir="rtl">
 <head>
-  <title>قالب آماده </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-rtl.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
-
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>اشکان مطاعی | Front-End Developer & Software Support Engineer</title>
+  <meta name="description" content="وب‌سایت شخصی اشکان مطاعی؛ توسعه‌دهنده Front-End و مهندس پشتیبانی نرم‌افزار با تجربه Angular، JavaScript، TypeScript، SQL Server و استقرار IIS.">
+  <meta name="keywords" content="اشکان مطاعی, Front-End Developer, Angular Developer, JavaScript, TypeScript, SQL Server, IIS, Software Support Engineer, Portfolio">
+  <meta name="author" content="Ashkan Motaei">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#07111f">
+  <meta property="og:type" content="website"><meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="اشکان مطاعی | Front-End Developer"><meta property="og:description" content="نمونه‌کارها، مهارت‌ها و تجربه حرفه‌ای اشکان مطاعی.">
+  <meta property="og:image" content="img/banner.jpg"><meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="./"><link rel="icon" href="img/link.png"><link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/BYekan.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ashkan Motaei","alternateName":"اشکان مطاعی","jobTitle":"Front-End Developer & Software Support Engineer","url":"./","sameAs":["https://github.com/ashkan20171"],"knowsAbout":["Angular","TypeScript","JavaScript","HTML5","CSS3","SQL Server","IIS","ASP.NET Core"]}</script>
 </head>
 <body>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="preloader-core"><span class="brand-mark">A</span><b>AshkanX</b><i></i></div></div>
+<div class="custom-cursor" id="customCursor"></div><div class="cursor-dot" id="cursorDot"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+<div class="noise" aria-hidden="true"></div><div class="cursor-glow" aria-hidden="true"></div>
+<header class="site-header" id="top"><nav class="nav container" data-fa-aria-label="ناوبری اصلی" data-en-aria-label="Main navigation" aria-label="ناوبری اصلی">
+  <a class="brand" href="#home" data-fa-aria-label="خانه" data-en-aria-label="Home" aria-label="خانه"><span class="brand-mark">A</span><span>Ashkan<span class="accent">X</span></span></a>
+  <button class="nav-toggle" data-fa-aria-label="باز کردن منو" data-en-aria-label="Open menu" aria-label="باز کردن منو" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-links"><a href="#about" data-fa="درباره من" data-en="About">درباره من</a><a href="#skills" data-fa="مهارت‌ها" data-en="Skills">مهارت‌ها</a><a href="#experience" data-fa="تجربه" data-en="Experience">تجربه</a><a href="#projects" data-fa="پروژه‌ها" data-en="Projects">پروژه‌ها</a><a href="#certificates" data-fa="گواهینامه‌ها" data-en="Certificates">گواهینامه‌ها</a><a href="#services" data-fa="خدمات" data-en="Services">خدمات</a><a href="#blog" data-fa="وبلاگ" data-en="Blog">وبلاگ</a><a href="#contact" data-fa="تماس" data-en="Contact">تماس</a></div>
+  <div class="nav-actions"><button class="icon-btn command-trigger" id="commandTrigger" aria-label="Command palette">⌘K</button><button class="icon-btn" id="themeToggle" data-fa-aria-label="تغییر پوسته" data-en-aria-label="Toggle theme" aria-label="تغییر پوسته">☾</button><button class="lang-btn" id="langToggle" aria-label="Change language">EN</button></div>
+</nav></header>
+<main id="main">
+<section class="hero" id="home"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="container hero-grid">
+  <div class="hero-copy reveal"><span class="eyebrow"><i></i><span data-fa="آماده همکاری و فرصت‌های جدید" data-en="Open to new opportunities">آماده همکاری و فرصت‌های جدید</span></span>
+    <h1><span data-fa="سلام، من" data-en="Hi, I'm">سلام، من</span> <strong data-fa="اشکان مطاعی" data-en="Ashkan Motaei">اشکان مطاعی</strong><br><span class="gradient-text" id="typewriter">Front-End Developer</span></h1>
+    <p data-fa="تجربه را به رابط‌های سریع، زیبا و قابل‌اعتماد تبدیل می‌کنم؛ از توسعه Angular تا استقرار، پشتیبانی و حل مسئله در محیط واقعی." data-en="I turn experience into fast, elegant and reliable interfaces—from Angular development to deployment, support and real-world troubleshooting.">تجربه را به رابط‌های سریع، زیبا و قابل‌اعتماد تبدیل می‌کنم؛ از توسعه Angular تا استقرار، پشتیبانی و حل مسئله در محیط واقعی.</p>
+    <div class="hero-cta"><a class="btn primary" href="#projects"><span data-fa="دیدن پروژه‌ها" data-en="View projects">دیدن پروژه‌ها</span> <b>↙</b></a><a class="btn ghost" href="#contact"><span data-fa="ارتباط با من" data-en="Contact me">ارتباط با من</span></a></div>
+    <div class="quick-stats"><div><b>5+</b><span data-fa="سال تجربه فنی" data-en="Years technical experience">سال تجربه فنی</span></div><div><b>20+</b><span data-fa="مهارت و ابزار" data-en="Skills & tools">مهارت و ابزار</span></div><div><b>∞</b><span data-fa="علاقه به یادگیری" data-en="Curiosity">علاقه به یادگیری</span></div></div>
+  </div>
+  <div class="hero-visual reveal"><div class="scene" id="scene"><div class="planet-card">
+    <div class="code-window"><div class="window-bar"><i></i><i></i><i></i><span>ashkan.ts</span></div><pre><code><em>const</em> developer = {
+  name: <q>"Ashkan"</q>,
+  focus: [<q>"Angular"</q>, <q>"UX"</q>],
+  mindset: <q>"build • learn • improve"</q>
+};</code></pre></div>
+    <div class="float-chip chip-1">&lt;/&gt; Angular</div><div class="float-chip chip-2">◆ TypeScript</div><div class="float-chip chip-3">▦ SQL Server</div><div class="float-chip chip-4">⚙ IIS</div>
+  </div></div></div>
+</div><a href="#about" class="scroll-cue" data-fa-aria-label="اسکرول به بخش بعد" data-en-aria-label="Scroll to next section" aria-label="اسکرول به بخش بعد"><span></span></a></section>
+
+<section class="section" id="about"><div class="container"><div class="section-head reveal"><span>01 / ABOUT</span><h2 data-fa="ترکیب توسعه، پشتیبانی و حل مسئله" data-en="Development, support & problem solving">ترکیب توسعه، پشتیبانی و حل مسئله</h2></div>
+<div class="about-grid"><div class="glass-card profile-3d reveal"><div class="avatar-wrap"><img src="img/male.png" alt="تصویر گرافیکی پروفایل اشکان مطاعی" loading="lazy"></div><div><h3>Ashkan Motaei</h3><p>Front-End Developer · Software Support Engineer</p><div class="status"><i></i><span data-fa="تمرکز روی محصولات کاربردی و تجربه کاربری بهتر" data-en="Focused on useful products and better UX">تمرکز روی محصولات کاربردی و تجربه کاربری بهتر</span></div></div></div>
+<div class="about-copy reveal"><p data-fa="من توسعه‌دهنده‌ای هستم که فقط به ظاهر رابط کاربری فکر نمی‌کنم؛ ساختار تمیز، دسترس‌پذیری، عملکرد، تجربه کاربر و قابلیت نگهداری کد برایم بخشی از یک محصول خوب هستند." data-en="I'm a developer who looks beyond visual UI. Clean structure, accessibility, performance, user experience and maintainable code are all part of a good product.">من توسعه‌دهنده‌ای هستم که فقط به ظاهر رابط کاربری فکر نمی‌کنم؛ ساختار تمیز، دسترس‌پذیری، عملکرد، تجربه کاربر و قابلیت نگهداری کد برایم بخشی از یک محصول خوب هستند.</p><p data-fa="در کنار توسعه Front-End، تجربه پشتیبانی نرم‌افزار، SQL Server، استقرار روی IIS و گزارش‌گیری باعث شده دید کامل‌تری نسبت به چرخه واقعی نرم‌افزار داشته باشم." data-en="Alongside front-end development, experience with software support, SQL Server, IIS deployment and reporting gives me a broader view of the real software lifecycle.">در کنار توسعه Front-End، تجربه پشتیبانی نرم‌افزار، SQL Server، استقرار روی IIS و گزارش‌گیری باعث شده دید کامل‌تری نسبت به چرخه واقعی نرم‌افزار داشته باشم.</p><div class="mini-grid"><div><span>01</span><b data-fa="کدنویسی تمیز" data-en="Clean code">کدنویسی تمیز</b></div><div><span>02</span><b data-fa="طراحی واکنش‌گرا" data-en="Responsive design">طراحی واکنش‌گرا</b></div><div><span>03</span><b data-fa="حل مسئله" data-en="Problem solving">حل مسئله</b></div><div><span>04</span><b data-fa="یادگیری مستمر" data-en="Continuous learning">یادگیری مستمر</b></div></div></div></div></div></section>
+
+<section class="section alt" id="skills"><div class="container"><div class="section-head reveal"><span>02 / SKILLS</span><h2 data-fa="ابزارهایی که با آن‌ها می‌سازم" data-en="Tools I build with">ابزارهایی که با آن‌ها می‌سازم</h2></div>
+<div class="skill-cloud reveal" data-fa-aria-label="مهارت‌ها" data-en-aria-label="Skills" aria-label="مهارت‌ها"><span>Angular</span><span>TypeScript</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Angular Material</span><span>Bootstrap</span><span>Git / GitHub</span><span>SQL Server</span><span>IIS</span><span>C#</span><span>ASP.NET Core</span><span>Figma</span><span>Stimulsoft</span><span>WordPress</span></div>
+<div class="capabilities"><article class="tilt-card reveal"><i>◫</i><h3>Front-End Engineering</h3><p data-fa="رابط‌های مدرن، واکنش‌گرا، component-based و قابل نگهداری با تمرکز بر UX و performance." data-en="Modern, responsive, component-based and maintainable interfaces focused on UX and performance.">رابط‌های مدرن، واکنش‌گرا، component-based و قابل نگهداری با تمرکز بر UX و performance.</p></article><article class="tilt-card reveal"><i>⌁</i><h3>Software Support</h3><p data-fa="عیب‌یابی سیستم، تحلیل خطا، SQL، استقرار و همراهی کاربر تا رسیدن به راه‌حل عملی." data-en="System troubleshooting, error analysis, SQL, deployment and practical user support.">عیب‌یابی سیستم، تحلیل خطا، SQL، استقرار و همراهی کاربر تا رسیدن به راه‌حل عملی.</p></article><article class="tilt-card reveal"><i>✦</i><h3>UI / UX Mindset</h3><p data-fa="سلسله‌مراتب بصری، رنگ، دسترس‌پذیری و micro-interaction برای تجربه‌ای واضح و خوشایند." data-en="Visual hierarchy, color, accessibility and micro-interactions for a clear, pleasant experience.">سلسله‌مراتب بصری، رنگ، دسترس‌پذیری و micro-interaction برای تجربه‌ای واضح و خوشایند.</p></article></div></div></section>
+
+<section class="section" id="experience"><div class="container"><div class="section-head reveal"><span>03 / EXPERIENCE</span><h2 data-fa="مسیر حرفه‌ای" data-en="Professional journey">مسیر حرفه‌ای</h2></div><div class="timeline">
+<article class="timeline-item reveal"><time>2025 — <span data-fa="اکنون" data-en="Present">اکنون</span></time><div><h3 data-fa="پشتیبانی نرم‌افزار · ارقام نگار اندیشه" data-en="Software Support · Argham Negar Andisheh">پشتیبانی نرم‌افزار · ارقام نگار اندیشه</h3><p data-fa="استقرار اپلیکیشن وب روی IIS، رفع مسائل SQL Server، طراحی گزارش Stimulsoft و پشتیبانی سیستم حسابداری." data-en="Web app deployment on IIS, SQL Server troubleshooting, Stimulsoft report design and accounting software support.">استقرار اپلیکیشن وب روی IIS، رفع مسائل SQL Server، طراحی گزارش Stimulsoft و پشتیبانی سیستم حسابداری.</p></div></article>
+<article class="timeline-item reveal"><time>2023 — 2025</time><div><h3 data-fa="Front-End Developer & Software Support · Sadra" data-en="Front-End Developer & Software Support · Sadra">Front-End Developer & Software Support · Sadra</h3><p data-fa="توسعه رابط‌های Angular و Angular Material، کار روی سامانه منابع انسانی و پشتیبانی سامانه AQMS." data-en="Angular and Angular Material development, HR system work and AQMS support.">توسعه رابط‌های Angular و Angular Material، کار روی سامانه منابع انسانی و پشتیبانی سامانه AQMS.</p></div></article>
+<article class="timeline-item reveal"><time>2022</time><div><h3>Helpdesk · GISP Industrial Group</h3><p data-fa="پشتیبانی کاربران، رفع مشکلات نرم‌افزاری و سخت‌افزاری و رسیدگی به مسائل روزمره IT." data-en="User support, software/hardware troubleshooting and day-to-day IT operations.">پشتیبانی کاربران، رفع مشکلات نرم‌افزاری و سخت‌افزاری و رسیدگی به مسائل روزمره IT.</p></div></article>
+<article class="timeline-item reveal"><time>2021</time><div><h3>Front-End Developer · Hayo</h3><p data-fa="توسعه رابط وب و پیاده‌سازی صفحات واکنش‌گرا با فناوری‌های Front-End." data-en="Web UI development and responsive page implementation with front-end technologies.">توسعه رابط وب و پیاده‌سازی صفحات واکنش‌گرا با فناوری‌های Front-End.</p></div></article></div></div></section>
+
+<section class="section alt" id="projects"><div class="container"><div class="section-head row-head reveal"><div><span>04 / SELECTED WORK</span><h2 data-fa="پروژه‌های منتخب" data-en="Selected projects">پروژه‌های منتخب</h2></div><div class="filters"><button class="active" data-filter="all" data-fa="همه" data-en="All">همه</button><button data-filter="web">Web</button><button data-filter="system">System</button><button data-filter="ui">UI/UX</button></div></div>
+<div class="projects-grid">
+<article class="project-card featured reveal" data-category="web system"><div class="project-visual pv-hr"><span>HR</span><div class="mock-panel"><i></i><i></i><i></i></div></div><div class="project-info"><small>Angular · ASP.NET Core · SQL Server</small><h3 data-fa="سامانه منابع انسانی" data-en="HR Management System">سامانه منابع انسانی</h3><p data-fa="ثبت ساعت، مرخصی، مأموریت، فیش حقوقی، داشبورد و دسترسی مبتنی بر نقش با رابط RTL مدرن." data-en="Time tracking, leave, mission, payslip, dashboard and role-based access with a modern RTL UI.">ثبت ساعت، مرخصی، مأموریت، فیش حقوقی، داشبورد و دسترسی مبتنی بر نقش با رابط RTL مدرن.</p><button class="project-open" type="button" data-fa="جزئیات پروژه" data-en="Project details">جزئیات پروژه</button></div></article>
+<article class="project-card reveal" data-category="web ui"><div class="project-visual pv-ai"><span>AI</span><b>✦</b></div><div class="project-info"><small>Angular · UI/UX</small><h3>Ashkan AI</h3><p data-fa="کانسپت رابط هوش مصنوعی چندزبانه با چت، تاریخچه، پلن‌های کاربری و ابزارهای تولید محتوا." data-en="Multilingual AI interface concept with chat, history, user plans and content tools.">کانسپت رابط هوش مصنوعی چندزبانه با چت، تاریخچه، پلن‌های کاربری و ابزارهای تولید محتوا.</p><button class="project-open" type="button" data-fa="جزئیات پروژه" data-en="Project details">جزئیات پروژه</button></div></article>
+<article class="project-card reveal" data-category="system"><div class="project-visual pv-aqms"><span>AQMS</span><b>⌁</b></div><div class="project-info"><small>C# · SQL · Support</small><h3>AQMS</h3><p data-fa="تجربه توسعه و پشتیبانی سامانه پایش کیفیت هوا و حل مسائل فنی در محیط عملیاتی." data-en="Development and support experience for an air-quality monitoring system in production environments.">تجربه توسعه و پشتیبانی سامانه پایش کیفیت هوا و حل مسائل فنی در محیط عملیاتی.</p><button class="project-open" type="button" data-fa="جزئیات پروژه" data-en="Project details">جزئیات پروژه</button></div></article>
+<article class="project-card reveal" data-category="web ui"><div class="project-visual pv-search"><span>AshkanX</span><b>⌕</b></div><div class="project-info"><small>HTML · CSS · JavaScript</small><h3>AshkanX Search</h3><p data-fa="کانسپت موتور جست‌وجو با تب‌های وب، تصویر و ویدئو و طراحی مینیمال و سریع." data-en="Search-engine concept with web, image and video tabs in a fast, minimal interface.">کانسپت موتور جست‌وجو با تب‌های وب، تصویر و ویدئو و طراحی مینیمال و سریع.</p><button class="project-open" type="button" data-fa="جزئیات پروژه" data-en="Project details">جزئیات پروژه</button></div></article>
+</div><div class="center"><a class="text-link" href="https://github.com/ashkan20171" target="_blank" rel="noopener">GitHub / ashkan20171 ↗</a></div></div></section>
 
 
- <div class="main-navbar navbar-fixed-top">
+<section class="section" id="certificates"><div class="container"><div class="section-head reveal"><span>05 / CERTIFICATES</span><h2 data-fa="گواهینامه‌ها و یادگیری مستمر" data-en="Certificates & continuous learning">گواهینامه‌ها و یادگیری مستمر</h2></div><div class="certificate-grid">
+<article class="certificate-card reveal"><span>AI</span><div><small>University of Helsinki</small><h3>Elements of AI</h3><p data-fa="مبانی هوش مصنوعی، حل مسئله و کاربردهای AI." data-en="AI foundations, problem solving and practical applications.">مبانی هوش مصنوعی، حل مسئله و کاربردهای AI.</p></div></article>
+<article class="certificate-card reveal"><span>FE</span><div><small>Daneshjooyar</small><h3>Front-End Development</h3><p data-fa="HTML، CSS، JavaScript، Bootstrap و توسعه رابط کاربری." data-en="HTML, CSS, JavaScript, Bootstrap and interface development.">HTML، CSS، JavaScript، Bootstrap و توسعه رابط کاربری.</p></div></article>
+<article class="certificate-card reveal"><span>DB</span><div><small>Daneshjooyar</small><h3>SQL Server</h3><p data-fa="مدیریت و کار با پایگاه داده SQL Server." data-en="Working with and managing SQL Server databases.">مدیریت و کار با پایگاه داده SQL Server.</p></div></article>
+<article class="certificate-card reveal"><span>UX</span><div><small>UI / UX</small><h3>UI/UX Design</h3><p data-fa="طراحی رابط، تجربه کاربری و نمونه‌سازی." data-en="Interface design, user experience and prototyping.">طراحی رابط، تجربه کاربری و نمونه‌سازی.</p></div></article></div></div></section>
+<section class="section alt" id="resume"><div class="container"><div class="section-head reveal"><span>06 / INTERACTIVE RESUME</span><h2 data-fa="رزومه تعاملی" data-en="Interactive resume">رزومه تعاملی</h2></div><div class="resume-shell reveal"><div class="resume-tabs"><button class="active" data-resume="frontend">Front-End</button><button data-resume="support">Software Support</button><button data-resume="toolbox" data-fa="ابزارها" data-en="Toolbox">ابزارها</button></div><div id="resumeContent" class="resume-content"></div></div></div></section>
+<section class="section" id="services"><div class="container"><div class="section-head reveal"><span>07 / SERVICES</span><h2 data-fa="چه کمکی می‌توانم بکنم؟" data-en="How I can help">چه کمکی می‌توانم بکنم؟</h2></div><div class="services-grid"><article class="service-card reveal"><b>01</b><h3 data-fa="توسعه Front-End" data-en="Front-End Development">توسعه Front-End</h3><p data-fa="طراحی و پیاده‌سازی رابط‌های سریع، واکنش‌گرا و قابل نگهداری." data-en="Fast, responsive and maintainable interface implementation.">طراحی و پیاده‌سازی رابط‌های سریع، واکنش‌گرا و قابل نگهداری.</p></article><article class="service-card reveal"><b>02</b><h3 data-fa="بازطراحی UI/UX" data-en="UI/UX Redesign">بازطراحی UI/UX</h3><p data-fa="مدرن‌سازی محصولات قدیمی با تمرکز بر تجربه کاربری و دسترس‌پذیری." data-en="Modernizing legacy products with a focus on UX and accessibility.">مدرن‌سازی محصولات قدیمی با تمرکز بر تجربه کاربری و دسترس‌پذیری.</p></article><article class="service-card reveal"><b>03</b><h3 data-fa="پشتیبانی و استقرار" data-en="Support & Deployment">پشتیبانی و استقرار</h3><p data-fa="عیب‌یابی، SQL Server، IIS و پشتیبانی عملیاتی نرم‌افزار." data-en="Troubleshooting, SQL Server, IIS and production software support.">عیب‌یابی، SQL Server، IIS و پشتیبانی عملیاتی نرم‌افزار.</p></article></div></div></section>
+<section class="section alt" id="github"><div class="container"><div class="section-head reveal"><span>08 / GITHUB</span><h2 data-fa="فعالیت و کدهای من" data-en="My code & activity">فعالیت و کدهای من</h2></div><div class="github-panel reveal"><div><span class="github-avatar">AM</span><div><h3>Ashkan Motaei</h3><p>@ashkan20171</p></div></div><div class="github-stats"><div><b>Git</b><span data-fa="کنترل نسخه" data-en="Version control">کنترل نسخه</span></div><div><b>Open</b><span data-fa="پروژه‌های شخصی" data-en="Personal projects">پروژه‌های شخصی</span></div><div><b>Build</b><span data-fa="یادگیری با ساختن" data-en="Learning by building">یادگیری با ساختن</span></div></div><a class="btn ghost" href="https://github.com/ashkan20171" target="_blank" rel="noopener">GitHub ↗</a></div></div></section>
+<section class="section" id="testimonials"><div class="container"><div class="section-head reveal"><span>09 / WORK PRINCIPLES</span><h2 data-fa="چیزی که در همکاری ارائه می‌دهم" data-en="What I bring to a team">چیزی که در همکاری ارائه می‌دهم</h2></div><div class="testimonials-grid"><blockquote class="reveal"><b>“</b><p data-fa="پیگیری مسئله تا رسیدن به راه‌حل عملی و قابل اتکا." data-en="Following a problem through to a practical, reliable solution.">پیگیری مسئله تا رسیدن به راه‌حل عملی و قابل اتکا.</p><cite data-fa="رویکرد کاری" data-en="Working principle">رویکرد کاری</cite></blockquote><blockquote class="reveal"><b>“</b><p data-fa="توجه همزمان به تجربه کاربر، کیفیت کد و نیاز واقعی محصول." data-en="Balancing user experience, code quality and real product needs.">توجه همزمان به تجربه کاربر، کیفیت کد و نیاز واقعی محصول.</p><cite data-fa="رویکرد توسعه" data-en="Development principle">رویکرد توسعه</cite></blockquote></div></div></section>
+<section class="section alt" id="blog"><div class="container"><div class="section-head reveal"><span>10 / BLOG</span><h2 data-fa="یادداشت‌های فنی" data-en="Technical notes">یادداشت‌های فنی</h2></div><div class="blog-grid"><article class="blog-card reveal"><small>Angular · Front-End</small><h3 data-fa="ساخت Front-End قابل نگهداری" data-en="Building maintainable front-ends">ساخت Front-End قابل نگهداری</h3><p data-fa="چند اصل کاربردی برای ساختار، componentها و تجربه توسعه بهتر." data-en="Practical principles for structure, components and a better developer experience.">چند اصل کاربردی برای ساختار، componentها و تجربه توسعه بهتر.</p><a href="blog.html#maintainable" data-fa="مطالعه ←" data-en="Read →">مطالعه ←</a></article><article class="blog-card reveal"><small>IIS · SQL Server</small><h3 data-fa="از توسعه تا استقرار واقعی" data-en="From development to production">از توسعه تا استقرار واقعی</h3><p data-fa="نکاتی از تجربه استقرار، عیب‌یابی و پشتیبانی نرم‌افزار." data-en="Notes from deployment, troubleshooting and production support.">نکاتی از تجربه استقرار، عیب‌یابی و پشتیبانی نرم‌افزار.</p><a href="blog.html#deployment" data-fa="مطالعه ←" data-en="Read →">مطالعه ←</a></article></div></div></section>
+<section class="section" id="contact"><div class="container contact-shell reveal"><div><span class="eyebrow"><i></i>LET'S BUILD</span><h2 data-fa="ایده‌ای دارید؟ درباره‌اش صحبت کنیم." data-en="Have an idea? Let's talk about it.">ایده‌ای دارید؟<br>درباره‌اش صحبت کنیم.</h2><p data-fa="برای همکاری، فرصت شغلی یا گفتگو درباره یک پروژه، پیام بفرستید." data-en="For collaboration, job opportunities or a project conversation, send a message.">برای همکاری، فرصت شغلی یا گفتگو درباره یک پروژه، پیام بفرستید.</p><a class="social-link" href="https://github.com/ashkan20171" target="_blank" rel="noopener">GitHub ↗</a></div>
+<form id="contactForm" class="contact-form"><label><span data-fa="نام" data-en="Name">نام</span><input name="name" required autocomplete="name" placeholder="Ashkan"></label><label><span data-fa="ایمیل" data-en="Email">ایمیل</span><input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label><label><span data-fa="موضوع" data-en="Subject">موضوع</span><input name="subject" required placeholder="Project / Opportunity"></label><label><span data-fa="پیام" data-en="Message">پیام</span><textarea name="message" required rows="4" placeholder="..."></textarea></label><button class="btn primary" type="submit"><span data-fa="آماده‌سازی پیام" data-en="Prepare message">آماده‌سازی پیام</span> ↗</button><small id="formStatus" role="status"></small></form></div></section>
+</main>
+<footer><div class="container footer-inner"><a class="brand" href="#top"><span class="brand-mark">A</span><span>AshkanX</span></a><p>© <span id="year"></span> Ashkan Motaei. <span data-fa="طراحی و توسعه با دقت." data-en="Designed & built with care.">طراحی و توسعه با دقت.</span></p><a href="#top" aria-label="بازگشت به بالا">↑</a></div></footer>
 
-     <div class="navbar navbar-default">
-         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-         </button>
-         <a href="#" class="navbar-brand"><img src="img/HeaderLogo-K.png" class="img-responsive" width="150" height="40"> </a>
-         <div class="collapse navbar-collapse" id="myNavbar">
-         <ul class="nav navbar-nav navbar-right">
-             <li class="active nav-menu"><a href="#banner">خانه </a></li>
-             <li class="nav-menu"><a href="#service">خدمات</a></li>
-             <li class="nav-menu"><a href="#portfolio">نمونه کار </a></li>
-             <li class="nav-menu"><a href="#contact">ارتباط با ما</a></li>
-         </ul>
-         </div>
-     </div>
- </div>
-
-<!--banner-->
-
-<div id="banner" class="section-padding">
-
-    <div class="container">
-        <div class="row">
-            <div class="jumbotron">
-                <h1 class="small bold" >
-                    <a href="https://ashkan2021.gigfa.com/">
-                        ashkan2021
-                    </a>
-                </h1>
-                <p class="big">قالب بوت استرپ</p>
-                 <a href="#" class="btn btn-banner">بیشتر<i class="fa fa-send"></i> </a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!---cta -->
-<div class="cta-1">
-
-    <div class="container wow bounceInLeft" data-duration="2" data-dely="1s">
-
-        <div class="row text-center white " >
-
-            <h1 class="cta-title"> به سایت ما خوش آمدید</h1>
-            <p class="cta-sub-title">قالب بوت استرپ</p>
-        </div>
-    </div>
-</div>
-
-
- <!--SERVICE START-->
- <div id="service" class="section-padding">
-     <div class="container wow bounceInLeft" data-duration="2s" data-dely="1s">
-         <div class="row">
-             <div class="page-title text-center">
-                 <h1>خدمات</h1>
-                 <p>متن  توضیحات</p>
-                 <hr class="line-bottom"></hr>
-             </div>
-             <div class="col-md-4">
-                 <div class="service-box">
-                     <div class="service-icon"><i class="fa  fa-picture-o"></i></div>
-                     <div class="service-text">
-                         <h3>طراحی</h3>
-                         <p> متن توضیحات</p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-md-4">
-                 <div class="service-box">
-                     <div class="service-icon"><i class="fa fa fa-code"></i></div>
-                     <div class="service-text">
-                         <h3>برنامه نویسی</h3>
-                         <p> متن توضیحات</p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-md-4">
-                 <div class="service-box">
-                     <div class="service-icon"><i class="fa fa-diamond"></i></div>
-                     <div class="service-text">
-                         <h3>بازاریابی</h3>
-                         <p> متن توضیحات</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <!--SERVICE END-->
-
-<!----portfolio --->
-
-<div id="portfolio">
-    <div class="container wow bounceInLeft" data-duration="2s" data-dely="1s">
-        <div class="row">
-            <div class="page-title text-center">
-                <h1>نمونه کارهای  ما</h1>
-                <p>متن  توضیحات</p>
-                <hr class="line-bottom"></hr>
-            </div>
-            <div class="port-sec">
-                <div class="col-xs-12 fill-btn text-center">
-                    <button class="filter active" data-filter="all"> نمایش همه</button>
-                    <button class="filter" data-filter=".cat1"> طراحی</button>
-                    <button class="filter" data-filter=".cat2">برنامه نویسی</button>
-                    <button class="filter" data-filter=".cat3">سئو</button>
-                </div>
-
-                <div id="images">
-                    <div class="fillimg mix cat1 cat3 col-md-4 col-xs-12">
-                        <img src="img/fea1.jpg" class="img-responsive">
-                    </div>
-                    <div class="fillimg mix cat2  col-md-4 col-xs-12">
-                        <img src="img/fea3.jpg" class="img-responsive">
-                    </div>
-                    <div class="fillimg mix cat1 col-md-4 col-xs-12">
-                        <img src="img/fea2.jpg" class="img-responsive">
-                    </div>
-                    <div class="fillimg mix cat2 cat3 col-md-4 col-xs-12">
-                        <img src="img/fea4.jpg" class="img-responsive">
-                    </div>
-
-                    <div class="fillimg mix cat2  col-md-4 col-xs-12">
-                        <img src="img/fea6.jpg" class="img-responsive">
-                    </div>
-                    <div class="fillimg mix cat2 cat3 col-md-4 col-xs-12">
-                        <img src="img/fea5.jpg" class="img-responsive">
-                    </div>
-
-
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!---cta--->
-
-<div class="cta-1">
-    <div class="container wow bounceInLeft" data-duration="2" data-dely="1s">
-        <div class="row text-center">
-            <h3 >طراحی واکنشگرای سایت های خود را به ما یسپارید</h3>
-            <a href="#" class="btn btn-default">بیشتر</a>
-
-        </div>
-    </div>
-</div>
-<!---form contact ---->
-
-<div id="contact" >
-    <div class="container wow bounceInLeft" data-duration="2s" data-dely="1s">
-        <div class="row">
-            <div class="page-title text-center">
-                <h1>ارتباط با ما</h1>
-                <p>متن  توضیحات</p>
-                <hr class="line-bottom"></hr>
-            </div>
-            <div class="form-sec">
-                <form action="#" method="post" class="contactfrom">
-                    <div class="col-sm-4 form-group">
-                        <input type="text" class="form-control text-field-box " placeholder="نام" >
-                    </div>
-                    <div class="col-sm-4 form-group">
-                        <input type="text" class="form-control text-field-box " placeholder="ایمیل" >
-                    </div>
-
-
-                    <div class="col-sm-4 form-group">
-                        <input type="text" class="form-control text-field-box " placeholder="اموضوع" >
-                    </div>
-
-
-                    <div class="col-sm-12 form-group">
-                       <textarea class="form-control text-field-box" placeholder="متن چیام"></textarea>
-                    </div>
-                    <button class="button-medium" type="submit" >ارسال</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!----footer--->
-<div class="footer">
-    <div class="container">
-        <div class="row text-center">
-           <h3>روشهای ارتباطی</h3>
-
-            <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i> </a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i> </a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-</body>
-<script src="js/jquery.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mixitup.js"></script>
-<script src="js/custom.js"></script>
- <script src="js/jquery.easing.min.js"></script>
-<script src="js/wow.js"></script>
-<script>
-    $(document).ready(function(){
-
-        new WOW().init();
-    });
-</script>
-
- </html>
+<button class="back-to-top" id="backToTop" data-fa-aria-label="بازگشت به بالا" data-en-aria-label="Back to top" aria-label="بازگشت به بالا">↑</button>
+<button class="chat-launcher" id="chatLauncher" data-fa-aria-label="باز کردن دستیار هوشمند" data-en-aria-label="Open AI assistant" aria-label="باز کردن دستیار هوشمند"><span>✦</span><i></i></button>
+<aside class="chat" id="chat" aria-hidden="true"><div class="chat-head"><div><b>✦ Ashkan AI</b><small><i></i><span data-fa="دستیار سایت · آنلاین" data-en="Site assistant · Online">دستیار سایت · آنلاین</span></small></div><button id="chatClose" data-fa-aria-label="بستن" data-en-aria-label="Close" aria-label="بستن">×</button></div><div class="chat-messages" id="chatMessages"><div class="bot-msg" data-fa="سلام! من دستیار سایت اشکان هستم. درباره مهارت‌ها، تجربه، پروژه‌ها یا راه ارتباطی از من بپرسید." data-en="Hi! I'm Ashkan's site assistant. Ask me about skills, experience, projects or contact options.">سلام! من دستیار سایت اشکان هستم. درباره مهارت‌ها، تجربه، پروژه‌ها یا راه ارتباطی از من بپرسید.</div></div><div class="chat-suggestions"><button data-q="skills" data-fa="مهارت‌ها" data-en="Skills">مهارت‌ها</button><button data-q="projects" data-fa="پروژه‌ها" data-en="Projects">پروژه‌ها</button><button data-q="contact" data-fa="تماس" data-en="Contact">تماس</button></div><form id="chatForm"><input id="chatInput" autocomplete="off" data-fa-placeholder="پیام شما..." data-en-placeholder="Your message..." placeholder="پیام شما..."><button data-fa-aria-label="ارسال" data-en-aria-label="Send" aria-label="ارسال">↑</button></form></aside>
+<div class="project-modal" id="projectModal" aria-hidden="true"><div class="modal-backdrop" data-modal-close></div><article class="modal-card"><button class="modal-close" data-modal-close aria-label="Close">×</button><div class="modal-visual" id="modalVisual">AX</div><small id="modalTech"></small><h2 id="modalTitle"></h2><p id="modalDescription"></p><div class="modal-actions"><a class="btn primary" id="modalPage" href="#">Case Study ↗</a><button class="btn ghost" data-modal-close data-fa="بستن" data-en="Close">بستن</button></div></article></div>
+<div class="command-palette" id="commandPalette" aria-hidden="true"><div class="command-backdrop" data-command-close></div><div class="command-box"><div class="command-search"><span>⌕</span><input id="commandInput" data-fa-placeholder="جستجو یا اجرای فرمان..." data-en-placeholder="Search or run a command..." placeholder="جستجو یا اجرای فرمان..."><kbd>ESC</kbd></div><div class="command-list" id="commandList"></div><small class="command-hint" data-fa="↑↓ حرکت · Enter انتخاب · Esc بستن" data-en="↑↓ navigate · Enter select · Esc close">↑↓ حرکت · Enter انتخاب · Esc بستن</small></div></div>
+<script src="js/custom.js" defer></script>
+</body></html>

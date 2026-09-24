@@ -1,28 +1,48 @@
-(function ($) {
-    //navigation smooth scrolling
+'use strict';
+const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelectorAll(s)];
+const body=document.body, root=document.documentElement;
+const savedTheme=localStorage.getItem('ashkan-theme'); if(savedTheme==='light') body.classList.add('light');
+$('#themeToggle').addEventListener('click',()=>{body.classList.toggle('light');localStorage.setItem('ashkan-theme',body.classList.contains('light')?'light':'dark');$('#themeToggle').textContent=body.classList.contains('light')?'☀':'☾'});
+$('#themeToggle').textContent=body.classList.contains('light')?'☀':'☾';
+const navToggle=$('.nav-toggle'), navLinks=$('.nav-links'); navToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');navToggle.setAttribute('aria-expanded',open)}); $$('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12}); $$('.reveal').forEach(el=>io.observe(el));
+const sections=$$('main section[id]'); const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -45%'}); sections.forEach(s=>spy.observe(s));
+const scene=$('#scene'); if(matchMedia('(pointer:fine)').matches){$('.hero-visual').addEventListener('mousemove',e=>{const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;scene.style.transform=`rotateY(${x*14}deg) rotateX(${-y*12}deg)`});$('.hero-visual').addEventListener('mouseleave',()=>scene.style.transform='')}
+$$('.tilt-card').forEach(card=>{card.addEventListener('mousemove',e=>{if(!matchMedia('(pointer:fine)').matches)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*5}deg) rotateX(${-y*5}deg) translateY(-4px)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
+addEventListener('mousemove',e=>{const g=$('.cursor-glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+$$('.filters button').forEach(btn=>btn.addEventListener('click',()=>{$$('.filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;$$('.project-card').forEach(c=>c.classList.toggle('hidden',f!=='all'&&!c.dataset.category.includes(f)))}));
+const translations={fa:['Front-End Developer','Angular Developer','Software Support Engineer'],en:['Front-End Developer','Angular Developer','Software Support Engineer']};let lang=localStorage.getItem('ashkan-lang')||'fa',ti=0;
+function applyLang(){
+  const en=lang==='en';
+  body.classList.toggle('en',en); root.lang=lang; root.dir=en?'ltr':'rtl';
+  $$('[data-fa]').forEach(el=>{const value=el.dataset[lang];if(value!==undefined)el.textContent=value});
+  $$('[data-fa-placeholder]').forEach(el=>{const value=el.dataset[lang+'Placeholder'];if(value!==undefined)el.placeholder=value});
+  $$('[data-fa-aria-label]').forEach(el=>{const value=el.dataset[lang+'AriaLabel'];if(value)el.setAttribute('aria-label',value)});
+  $('#langToggle').textContent=en?'FA':'EN';
+  $('#langToggle').setAttribute('aria-label',en?'تغییر زبان به فارسی':'Change language to English');
+  $('#typewriter').textContent=translations[lang][ti%translations[lang].length];
+  document.title=en?'Ashkan Motaei | Front-End Developer & Software Support Engineer':'اشکان مطاعی | Front-End Developer & Software Support Engineer';
+  const desc=$('meta[name=description]'); if(desc)desc.content=en?'Ashkan Motaei’s portfolio — Front-End Developer and Software Support Engineer experienced with Angular, JavaScript, TypeScript, SQL Server and IIS deployment.':'وب‌سایت شخصی اشکان مطاعی؛ توسعه‌دهنده Front-End و مهندس پشتیبانی نرم‌افزار با تجربه Angular، JavaScript، TypeScript، SQL Server و استقرار IIS.';
+  localStorage.setItem('ashkan-lang',lang)
+}applyLang();$('#langToggle').addEventListener('click',()=>{lang=lang==='fa'?'en':'fa';applyLang()});setInterval(()=>{ti++;$('#typewriter').animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:500});$('#typewriter').textContent=translations[lang][ti%3]},3500);
+$('#year').textContent=new Date().getFullYear();
+$('#contactForm').addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(e.currentTarget),sub=encodeURIComponent(fd.get('subject')),msg=encodeURIComponent(`Name: ${fd.get('name')}\nEmail: ${fd.get('email')}\n\n${fd.get('message')}`);$('#formStatus').textContent=lang==='fa'?'پیام در برنامه ایمیل شما آماده می‌شود.':'Your message will open in your email app.';location.href=`mailto:?subject=${sub}&body=${msg}`});
+const chat=$('#chat'), messages=$('#chatMessages'), input=$('#chatInput');function toggleChat(open){chat.classList.toggle('open',open);chat.setAttribute('aria-hidden',!open);if(open)setTimeout(()=>input.focus(),100)}$('#chatLauncher').addEventListener('click',()=>toggleChat(true));$('#chatClose').addEventListener('click',()=>toggleChat(false));
+const answers={fa:{skills:'مهارت‌های اصلی اشکان شامل Angular، TypeScript، JavaScript، HTML/CSS، Angular Material، SQL Server، IIS، C#، ASP.NET Core، Git و Figma است.',projects:'از پروژه‌های شاخص می‌توان به سامانه منابع انسانی، Ashkan AI، تجربه AQMS و AshkanX Search اشاره کرد. بخش «پروژه‌ها» جزئیات بیشتری دارد.',experience:'اشکان در توسعه Front-End و پشتیبانی نرم‌افزار تجربه دارد و با استقرار IIS، SQL Server، گزارش‌گیری و پشتیبانی سامانه‌های عملیاتی کار کرده است.',contact:'برای ارتباط می‌توانید از فرم تماس همین صفحه استفاده کنید یا پروفایل GitHub با نام ashkan20171 را ببینید.',default:'می‌توانم درباره مهارت‌ها، تجربه، پروژه‌ها و راه‌های ارتباطی اشکان راهنمایی کنم. مثلاً بپرسید «مهارت‌هاش چیه؟» یا «چه پروژه‌هایی داشته؟»'},en:{skills:'Ashkan’s core skills include Angular, TypeScript, JavaScript, HTML/CSS, Angular Material, SQL Server, IIS, C#, ASP.NET Core, Git and Figma.',projects:'Selected work includes an HR system, Ashkan AI, AQMS experience and AshkanX Search. See the Projects section for more.',experience:'Ashkan has experience in front-end development and software support, including IIS deployment, SQL Server, reporting and production support.',contact:'Use the contact form on this page or visit the GitHub profile ashkan20171.',default:'I can help with Ashkan’s skills, experience, projects and contact options. Try asking “What are his skills?” or “Which projects has he worked on?”'}};
+function classify(t,q){t=t.toLowerCase();if(q)return q;if(/مهارت|تکنولوژی|skill|angular|typescript/.test(t))return'skills';if(/پروژه|نمونه|project|work/.test(t))return'projects';if(/تجربه|سابقه|experience|job/.test(t))return'experience';if(/تماس|ارتباط|ایمیل|contact|email|github/.test(t))return'contact';return'default'}function send(text,q){if(!text.trim()&&!q)return;if(text){const u=document.createElement('div');u.className='user-msg';u.textContent=text;messages.append(u)}setTimeout(()=>{const b=document.createElement('div');b.className='bot-msg';b.textContent=answers[lang][classify(text,q)];messages.append(b);messages.scrollTop=messages.scrollHeight},250);input.value='';messages.scrollTop=messages.scrollHeight}$('#chatForm').addEventListener('submit',e=>{e.preventDefault();send(input.value)});$$('.chat-suggestions button').forEach(b=>b.addEventListener('click',()=>send(b.textContent,b.dataset.q)));
 
-       $('.navbar-nav li a').on('click', function(event) {
+// Reading progress + back-to-top UX
+const progress=$('#scrollProgress'), backToTop=$('#backToTop');
+function updateScrollUI(){const max=document.documentElement.scrollHeight-innerHeight;const ratio=max>0?scrollY/max:0;progress.style.transform=`scaleX(${Math.min(1,Math.max(0,ratio))})`;backToTop.classList.toggle('show',scrollY>650)}
+addEventListener('scroll',updateScrollUI,{passive:true});updateScrollUI();backToTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+// Escape closes overlays and mobile navigation
+addEventListener('keydown',e=>{if(e.key==='Escape'){toggleChat(false);navLinks.classList.remove('open');navToggle.setAttribute('aria-expanded','false')}});
 
-           if (this.hash !== "") {
-               event.preventDefault();
-
-               // Store hash
-               var hash = this.hash;
-
-               $('html, body').animate({
-                   scrollTop: $(hash).offset().top
-               }, 800,'easeInOutQuart', function () {
-
-
-                   window.location.hash = hash;
-               });
-           }
-       });
-
-    // Instantiate MixItUp:
-    $('#images').mixItUp();
-
-    new WOW().init();
-
-
-})(jQuery)
+// v3: preloader, custom cursor, command palette, interactive resume and project case studies
+addEventListener('load',()=>setTimeout(()=>$('#preloader')?.classList.add('hide'),280));
+if(matchMedia('(pointer:fine)').matches){const ring=$('#customCursor'),dot=$('#cursorDot');addEventListener('mousemove',e=>{ring.style.left=dot.style.left=e.clientX+'px';ring.style.top=dot.style.top=e.clientY+'px'});document.addEventListener('mouseover',e=>body.classList.toggle('cursor-hover',!!e.target.closest('a,button,input,textarea,.project-card')))}
+const resumeData={fa:{frontend:[['2023 — 2025','Front-End Developer · Sadra','Angular، Angular Material، CSS و توسعه سامانه منابع انسانی.'],['2021','Front-End Developer · Hayo','پیاده‌سازی صفحات وب واکنش‌گرا و رابط کاربری.']],support:[['2025 — اکنون','Software Support · Argham Negar Andisheh','IIS، SQL Server، Stimulsoft و پشتیبانی نرم‌افزار حسابداری.'],['2023 — 2025','AQMS Support · Sadra','پشتیبانی سامانه پایش کیفیت هوا و حل مسائل محیط عملیاتی.']],toolbox:[['Front-End','Angular · TypeScript · JavaScript','HTML5 · CSS3 · Angular Material · Bootstrap'],['Platform','IIS · Git · GitHub','Deployment · Troubleshooting · Version Control'],['Data / Backend','SQL Server · C# · ASP.NET Core','Database · API · Reporting']]},en:{frontend:[['2023 — 2025','Front-End Developer · Sadra','Angular, Angular Material, CSS and HR-system development.'],['2021','Front-End Developer · Hayo','Responsive web pages and interface implementation.']],support:[['2025 — Present','Software Support · Argham Negar Andisheh','IIS, SQL Server, Stimulsoft and accounting-software support.'],['2023 — 2025','AQMS Support · Sadra','Air-quality monitoring system support and production troubleshooting.']],toolbox:[['Front-End','Angular · TypeScript · JavaScript','HTML5 · CSS3 · Angular Material · Bootstrap'],['Platform','IIS · Git · GitHub','Deployment · Troubleshooting · Version Control'],['Data / Backend','SQL Server · C# · ASP.NET Core','Database · API · Reporting']]}};
+function renderResume(key='frontend'){const host=$('#resumeContent');if(!host)return;host.innerHTML=resumeData[lang][key].map(x=>`<article class="resume-entry"><small>${x[0]}</small><div><h3>${x[1]}</h3><p>${x[2]}</p></div></article>`).join('')}renderResume();$$('[data-resume]').forEach(b=>b.addEventListener('click',()=>{$$('[data-resume]').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderResume(b.dataset.resume)}));
+const oldApplyLang=applyLang;applyLang=function(){oldApplyLang();const active=$('[data-resume].active');renderResume(active?.dataset.resume||'frontend');renderCommands()};
+const projectSlugs=['hr-system','ashkan-ai','aqms','ashkanx-search'];const modal=$('#projectModal');$$('.project-card').forEach((card,i)=>{const btn=$('.project-open',card);if(!btn)return;btn.addEventListener('click',()=>{const title=$('h3',card).textContent,desc=$('p',card).textContent,tech=$('small',card).textContent;$('#modalTitle').textContent=title;$('#modalDescription').textContent=desc;$('#modalTech').textContent=tech;$('#modalVisual').textContent=i===0?'HR':i===1?'AI':i===2?'AQMS':'AX';$('#modalPage').href=`projects/${projectSlugs[i]}.html`;modal.classList.add('open');modal.setAttribute('aria-hidden','false')})});$$('[data-modal-close]').forEach(x=>x.addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}));
+const palette=$('#commandPalette'),commandInput=$('#commandInput'),commandList=$('#commandList');let commandIndex=0;function commands(){return[{fa:'رفتن به درباره من',en:'Go to About',meta:'A',run:()=>location.hash='about'},{fa:'نمایش پروژه‌ها',en:'View Projects',meta:'P',run:()=>location.hash='projects'},{fa:'گواهینامه‌ها',en:'Certificates',meta:'C',run:()=>location.hash='certificates'},{fa:'رزومه تعاملی',en:'Interactive Resume',meta:'R',run:()=>location.hash='resume'},{fa:'خدمات',en:'Services',meta:'S',run:()=>location.hash='services'},{fa:'وبلاگ',en:'Blog',meta:'B',run:()=>location.hash='blog'},{fa:'تغییر پوسته',en:'Toggle Theme',meta:'T',run:()=>$('#themeToggle').click()},{fa:'تغییر زبان',en:'Switch Language',meta:'L',run:()=>$('#langToggle').click()},{fa:'باز کردن Ashkan AI',en:'Open Ashkan AI',meta:'AI',run:()=>toggleChat(true)},{fa:'باز کردن GitHub',en:'Open GitHub',meta:'↗',run:()=>open('https://github.com/ashkan20171','_blank')}]}function renderCommands(){if(!commandList)return;const q=(commandInput?.value||'').toLowerCase();const arr=commands().filter(c=>c[lang].toLowerCase().includes(q));commandIndex=Math.min(commandIndex,Math.max(0,arr.length-1));commandList.innerHTML=arr.map((c,i)=>`<button class="command-item ${i===commandIndex?'active':''}" data-command="${commands().indexOf(c)}"><span>${c[lang]}</span><span>${c.meta}</span></button>`).join('');$$('.command-item',commandList).forEach(b=>b.addEventListener('click',()=>{commands()[+b.dataset.command].run();closeCommands()}))}function openCommands(){palette.classList.add('open');palette.setAttribute('aria-hidden','false');commandInput.value='';commandIndex=0;renderCommands();setTimeout(()=>commandInput.focus(),50)}function closeCommands(){palette.classList.remove('open');palette.setAttribute('aria-hidden','true')}$('#commandTrigger')?.addEventListener('click',openCommands);$$('[data-command-close]').forEach(x=>x.addEventListener('click',closeCommands));commandInput?.addEventListener('input',()=>{commandIndex=0;renderCommands()});addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openCommands()}if(!palette.classList.contains('open'))return;if(e.key==='Escape')closeCommands();if(e.key==='ArrowDown'){e.preventDefault();commandIndex++;renderCommands()}if(e.key==='ArrowUp'){e.preventDefault();commandIndex=Math.max(0,commandIndex-1);renderCommands()}if(e.key==='Enter'){e.preventDefault();$('.command-item.active',commandList)?.click()}});
